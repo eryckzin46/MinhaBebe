@@ -1,0 +1,1672 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    background:#02060d;
+    color:#ffffff;
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* =========================================================
+   FUNDO
+========================================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-10;
+
+    background:
+        radial-gradient(
+            circle at 78% 8%,
+            #152f52 0%,
+            #0b192d 28%,
+            #050b15 58%,
+            #010308 100%
+        );
+}
+
+
+/* =========================================================
+   LUA
+========================================================= */
+
+.moon{
+    position:absolute;
+    top:-40px;
+    right:-60px;
+    width:420px;
+    height:auto;
+    display:block;
+    z-index:5;
+    pointer-events:none;
+    transform:none;
+    animation:none;
+
+    filter:
+        drop-shadow(
+            0 0 35px
+            rgba(255,255,255,.25)
+        )
+        drop-shadow(
+            0 0 85px
+            rgba(80,150,255,.18)
+        );
+}
+
+.moonGlow{
+    position:absolute;
+    width:560px;
+    height:560px;
+    right:-130px;
+    top:-110px;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:2;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(160,205,255,.11) 0%,
+            rgba(80,140,220,.05) 32%,
+            transparent 70%
+        );
+}
+
+
+/* =========================================================
+   ESTRELAS
+========================================================= */
+
+#stars{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+    opacity:.48;
+}
+
+
+/* =========================================================
+   CORAÇÕES
+========================================================= */
+
+#hearts{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.heart{
+    position:absolute;
+    bottom:-40px;
+    color:#62adff;
+    line-height:1;
+    pointer-events:none;
+
+    will-change:
+        transform,
+        opacity;
+
+    text-shadow:
+        0 0 10px
+        rgba(70,160,255,.45);
+
+    animation:
+        heartFloat 8s linear forwards;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.75;
+    }
+
+    100%{
+        transform:
+            translate3d(0,-120vh,0)
+            rotate(15deg);
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   ESTRELAS
+========================================================= */
+
+@keyframes piscar{
+
+    0%{
+        opacity:.15;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:.8;
+        transform:scale(1.5);
+    }
+
+    100%{
+        opacity:.15;
+        transform:scale(1);
+    }
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+section{
+    position:relative;
+    min-height:100vh;
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    padding:
+        80px
+        10%;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+section:not(.voto-section){
+    opacity:0;
+
+    transform:
+        translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+section:not(.voto-section).show{
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+}
+
+.pagina{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+h1{
+    margin-bottom:25px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:58px;
+    font-weight:400;
+
+    color:#69b5ff;
+
+    text-shadow:
+        0 0 18px
+        rgba(70,160,255,.25);
+}
+
+h2{
+    margin-bottom:15px;
+    font-size:26px;
+    font-weight:300;
+    color:#c7e4ff;
+}
+
+
+/* =========================================================
+   TEXTOS
+========================================================= */
+
+p{
+    max-width:850px;
+    margin:12px auto;
+
+    font-size:19px;
+    line-height:1.85;
+
+    color:#e5f2ff;
+}
+
+
+/* =========================================================
+   BOTÃO INICIAL
+========================================================= */
+
+#comecar{
+    margin-top:40px;
+
+    padding:
+        17px
+        45px;
+
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+
+    color:#ffffff;
+
+    font-family:'Poppins',sans-serif;
+    font-size:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2679d9,
+            #55b8ff
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(60,160,255,.45);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+#comecar:hover{
+    transform:scale(1.07);
+
+    box-shadow:
+        0 0 40px
+        rgba(60,160,255,.65);
+}
+
+
+/* =========================================================
+   FOTO
+========================================================= */
+
+.fotoPrincipal{
+    display:block;
+
+    width:min(90vw,430px);
+    max-height:520px;
+
+    object-fit:cover;
+
+    margin:
+        0
+        auto
+        40px;
+
+    border-radius:24px;
+
+    border:
+        1px solid
+        rgba(120,190,255,.2);
+
+    box-shadow:
+        0 0 35px
+        rgba(50,130,220,.15);
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+ul{
+    list-style:none;
+    margin-top:30px;
+}
+
+li{
+    margin:18px 0;
+    font-size:22px;
+    color:#dceeff;
+}
+
+
+/* =========================================================
+   DIGITAÇÃO
+========================================================= */
+
+.typing{
+    opacity:0;
+    white-space:pre-wrap;
+}
+
+.typing.show{
+    opacity:1;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+#final{
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(15,55,100,.28),
+            transparent 65%
+        );
+}
+
+#final h1{
+    margin-top:25px;
+    font-size:82px;
+    color:#69b5ff;
+
+    text-shadow:
+        0 0 25px
+        rgba(70,160,255,.4);
+}
+
+#final p{
+    margin-top:40px;
+    color:#b9dcff;
+    font-size:21px;
+}
+
+
+/* =========================================================
+   PLAYER
+========================================================= */
+
+.music-player{
+    position:fixed;
+
+    left:18px;
+    bottom:18px;
+
+    z-index:5000;
+
+    width:250px;
+
+    padding:
+        10px
+        12px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    border:
+        1px solid
+        rgba(120,190,255,.2);
+
+    border-radius:18px;
+
+    background:
+        rgba(3,12,25,.82);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.35),
+
+        0 0 20px
+        rgba(50,130,220,.08);
+}
+
+.music-play{
+    flex-shrink:0;
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2679d9,
+            #55b8ff
+        );
+
+    font-size:14px;
+
+    transition:
+        transform .2s ease;
+}
+
+.music-play:hover{
+    transform:scale(1.08);
+}
+
+.music-info{
+    min-width:0;
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+
+.music-title{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
+    color:#e9f5ff;
+    font-size:12px;
+    font-weight:500;
+}
+
+.music-status{
+    color:#78baff;
+    font-size:10px;
+}
+
+.music-progress-container{
+    position:absolute;
+
+    left:12px;
+    right:12px;
+    bottom:4px;
+
+    height:2px;
+
+    overflow:hidden;
+
+    border-radius:5px;
+
+    background:
+        rgba(255,255,255,.1);
+}
+
+.music-progress{
+    width:0%;
+    height:100%;
+
+    border-radius:5px;
+
+    background:#65b4ff;
+
+    transition:
+        width .2s linear;
+}
+
+
+/* =========================================================
+   VOTO
+========================================================= */
+
+.voto-section{
+
+    min-height:100vh;
+
+    opacity:1 !important;
+    transform:none !important;
+
+    padding:
+        80px
+        20px;
+}
+
+.voto-container{
+    width:100%;
+    max-width:700px;
+}
+
+.voto-intro{
+    margin-bottom:5px;
+    color:#8fcaff;
+    font-size:17px;
+}
+
+.voto-section h1{
+    margin-bottom:10px;
+    font-size:64px;
+}
+
+.voto-subtitulo{
+    color:#aac7e3;
+    font-size:16px;
+}
+
+
+/* =========================================================
+   BOTÃO DO VOTO
+========================================================= */
+
+.voto-button{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:230px;
+
+    margin-top:40px;
+
+    padding:
+        17px
+        32px;
+
+    border:none;
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:#ffffff;
+
+    font-family:'Poppins',sans-serif;
+    font-size:17px;
+    font-weight:600;
+
+    background:
+        linear-gradient(
+            135deg,
+            #287bd8,
+            #63b9ff
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(60,160,255,.4),
+
+        0 10px 35px
+        rgba(0,0,0,.3);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.voto-button:hover{
+
+    transform:scale(1.06);
+
+    box-shadow:
+        0 0 40px
+        rgba(60,160,255,.6);
+}
+
+.voto-button:active{
+    transform:scale(.95);
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.voto-overlay{
+
+    position:fixed;
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:center;
+
+    padding:
+        35px
+        20px
+        60px;
+
+    background:
+        rgba(0,3,9,.96);
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+
+    /*
+       AGORA O SCROLL FICA NO OVERLAY.
+       Isso impede o rolinho inferior de ficar
+       parado enquanto o conteúdo passa por ele.
+    */
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    scrollbar-width:thin;
+}
+
+.voto-overlay.ativo{
+
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+
+/* =========================================================
+   PERGAMINHO WRAPPER
+========================================================= */
+
+.pergaminho-wrapper{
+
+    position:relative;
+
+    width:min(94vw,700px);
+
+    /*
+       NÃO LIMITAR A ALTURA AQUI.
+       O wrapper acompanha o tamanho real
+       do pergaminho e do conteúdo.
+    */
+
+    height:auto;
+    max-height:none;
+
+    padding:
+        45px
+        0
+        55px;
+
+    /*
+       IMPORTANTE:
+       o wrapper NÃO possui mais scroll próprio.
+    */
+
+    overflow:visible;
+
+    flex-shrink:0;
+
+    opacity:0;
+
+    transform:
+        scaleY(.03);
+
+    transform-origin:center center;
+
+    transition:
+        transform 1.8s
+        cubic-bezier(.16,1,.3,1),
+
+        opacity .5s ease;
+
+    filter:
+        drop-shadow(
+            0 25px 40px
+            rgba(0,0,0,.7)
+        );
+}
+
+.voto-overlay.ativo
+.pergaminho-wrapper{
+
+    opacity:1;
+
+    transform:
+        scaleY(1);
+}
+
+
+/* =========================================================
+   PAPEL CENTRAL
+========================================================= */
+
+.pergaminho{
+
+    position:relative;
+
+    width:100%;
+
+    /*
+       O papel cresce conforme o conteúdo.
+    */
+
+    min-height:720px;
+    height:auto;
+
+    /*
+       MAIS ESPAÇO SUPERIOR E INFERIOR.
+       O texto nunca fica grudado nos rolinhos.
+    */
+
+    padding:
+        115px
+        75px
+        235px;
+
+    overflow:visible;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(87,52,18,.30),
+            transparent 10%,
+            transparent 90%,
+            rgba(87,52,18,.30)
+        ),
+
+        linear-gradient(
+            180deg,
+            #c8a76b 0%,
+            #e5ca91 14%,
+            #d8b878 48%,
+            #c7a365 100%
+        );
+
+    box-shadow:
+
+        inset 0 0 45px
+        rgba(76,45,15,.35),
+
+        inset 0 0 10px
+        rgba(65,35,10,.45);
+}
+
+
+/* =========================================================
+   TEXTURA
+========================================================= */
+
+.papel-textura{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.5;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            rgba(80,45,12,.04) 2px,
+            transparent 5px
+        ),
+
+        radial-gradient(
+            ellipse at 20% 30%,
+            rgba(80,45,10,.12),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            ellipse at 80% 70%,
+            rgba(80,45,10,.13),
+            transparent 25%
+        );
+
+    mix-blend-mode:multiply;
+}
+
+
+/* =========================================================
+   BORDAS
+========================================================= */
+
+.pergaminho::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    border-left:
+        10px solid
+        rgba(91,58,22,.30);
+
+    border-right:
+        10px solid
+        rgba(91,58,22,.30);
+
+    clip-path:polygon(
+
+        0 0,
+        94% 1%,
+        100% 7%,
+        95% 13%,
+        100% 20%,
+        94% 27%,
+        100% 34%,
+        95% 42%,
+        100% 50%,
+        94% 58%,
+        100% 66%,
+        95% 73%,
+        100% 81%,
+        94% 89%,
+        100% 96%,
+        94% 100%,
+
+        6% 100%,
+        0 95%,
+        6% 88%,
+        0 81%,
+        5% 73%,
+        0 66%,
+        5% 58%,
+        0 50%,
+        5% 42%,
+        0 34%,
+        5% 27%,
+        0 20%,
+        5% 13%,
+        0 7%
+    );
+}
+
+
+/* =========================================================
+   ROLINHOS
+========================================================= */
+
+.pergaminho-rolo{
+
+    position:absolute;
+
+    left:-15px;
+
+    width:calc(100% + 30px);
+
+    height:62px;
+
+    z-index:20;
+
+    display:flex;
+
+    align-items:center;
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   ROLINHO SUPERIOR
+========================================================= */
+
+.rolo-top{
+    top:3px;
+}
+
+
+/* =========================================================
+   ROLINHO INFERIOR
+========================================================= */
+
+.rolo-bottom{
+
+    /*
+       Fica abaixo do papel,
+       sem atravessar o conteúdo.
+    */
+
+    bottom:-45px;
+}
+
+
+/* =========================================================
+   PARTES DOS ROLINHOS
+========================================================= */
+
+.rolo-left,
+.rolo-right{
+
+    width:48px;
+    height:100%;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #765020,
+            #d6b574,
+            #9c7033,
+            #e0c487,
+            #6e4a1d
+        );
+
+    box-shadow:
+
+        inset 0 0 12px
+        rgba(55,30,8,.5);
+}
+
+
+.rolo-left{
+    transform:rotate(-2deg);
+}
+
+.rolo-right{
+    transform:rotate(2deg);
+}
+
+
+.rolo-center{
+
+    flex:1;
+
+    height:48px;
+
+    margin:
+        0
+        -5px;
+
+    border-radius:8px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #765020 0%,
+            #c59b58 18%,
+            #e0c184 48%,
+            #9a6c2e 75%,
+            #654219 100%
+        );
+
+    box-shadow:
+
+        inset 0 5px 8px
+        rgba(255,230,170,.25),
+
+        inset 0 -7px 10px
+        rgba(55,30,8,.4);
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.pergaminho-conteudo{
+
+    position:relative;
+
+    /*
+       Fica SEMPRE acima dos rolinhos.
+    */
+
+    z-index:30;
+
+    opacity:0;
+
+    transform:
+        translateY(18px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    /*
+       Espaço extra depois da assinatura/brincadeira.
+    */
+
+    padding-bottom:40px;
+}
+
+.pergaminho-conteudo.mostrar{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.titulo-voto{
+
+    margin-bottom:38px;
+
+    text-align:center;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:44px;
+
+    font-weight:400;
+
+    color:#4d2e12;
+
+    text-shadow:
+
+        1px 1px 0
+        rgba(255,235,185,.35);
+}
+
+
+/* =========================================================
+   TEXTO DO VOTO
+========================================================= */
+
+.texto-voto{
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size:21px;
+
+    font-weight:500;
+
+    line-height:1.8;
+
+    text-align:center;
+
+    color:#3d2918;
+}
+
+
+.texto-voto p{
+
+    max-width:none;
+
+    margin:
+        0
+        0
+        25px;
+
+    color:#3d2918;
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size:21px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   FRASE DA ALIANÇA
+========================================================= */
+
+.frase-alianca{
+
+    margin-top:32px !important;
+
+    padding:
+        18px
+        10px;
+
+    border-top:
+        1px solid
+        rgba(75,45,18,.28);
+
+    border-bottom:
+        1px solid
+        rgba(75,45,18,.28);
+
+    font-size:23px !important;
+
+    font-style:italic;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   ASSINATURA
+========================================================= */
+
+.assinatura{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:5px;
+
+    margin-top:40px;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    opacity:0;
+
+    transform:
+        translateY(15px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.assinatura.mostrar{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+.assinatura span{
+    font-size:26px;
+}
+
+.assinatura strong{
+
+    font-size:40px;
+
+    font-weight:400;
+}
+
+
+/* =========================================================
+   BRINCADEIRA
+========================================================= */
+
+.brincadeira{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size:18px;
+
+    font-style:italic;
+
+    color:#513112;
+
+    opacity:0;
+
+    transform:
+        scale(.8);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.brincadeira.mostrar{
+
+    opacity:.8;
+
+    transform:
+        scale(1);
+}
+
+
+/* =========================================================
+   FECHAR
+========================================================= */
+
+.fechar-voto{
+
+    position:fixed;
+
+    top:18px;
+    right:18px;
+
+    z-index:10001;
+
+    width:44px;
+    height:44px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+        rgba(255,255,255,.10);
+
+    font-size:20px;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.fechar-voto:hover{
+
+    background:
+        rgba(255,255,255,.2);
+
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   BLOQUEAR SCROLL
+========================================================= */
+
+body.voto-bloqueia-scroll{
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    section{
+
+        padding:
+            70px
+            20px;
+    }
+
+
+    .moon{
+
+        width:270px;
+
+        top:-20px;
+
+        right:-45px;
+    }
+
+
+    .moonGlow{
+
+        width:400px;
+        height:400px;
+
+        right:-100px;
+        top:-80px;
+    }
+
+
+    h1{
+        font-size:45px;
+    }
+
+
+    h2{
+        font-size:22px;
+    }
+
+
+    p{
+
+        font-size:17px;
+
+        line-height:1.75;
+    }
+
+
+    .fotoPrincipal{
+
+        width:
+            min(88vw,390px);
+
+        margin-bottom:30px;
+    }
+
+
+    #final h1{
+        font-size:60px;
+    }
+
+
+    #final p{
+        font-size:18px;
+    }
+
+
+    .music-player{
+
+        left:12px;
+
+        bottom:12px;
+
+        width:215px;
+    }
+
+
+    .voto-section h1{
+        font-size:52px;
+    }
+
+
+    .voto-button{
+
+        width:
+            min(90vw,280px);
+    }
+
+
+    /* =========================================
+       OVERLAY MOBILE
+    ========================================= */
+
+    .voto-overlay{
+
+        align-items:flex-start;
+
+        justify-content:center;
+
+        padding:
+            30px
+            7px
+            70px;
+
+        overflow-y:auto;
+        overflow-x:hidden;
+    }
+
+
+    /* =========================================
+       WRAPPER MOBILE
+    ========================================= */
+
+    .pergaminho-wrapper{
+
+        width:97vw;
+
+        height:auto;
+        max-height:none;
+
+        padding:
+            40px
+            0
+            55px;
+
+        overflow:visible;
+
+        flex-shrink:0;
+    }
+
+
+    /* =========================================
+       PAPEL MOBILE
+    ========================================= */
+
+    .pergaminho{
+
+        min-height:850px;
+        height:auto;
+
+        /*
+           Mais espaço para os textos finais.
+        */
+
+        padding:
+            95px
+            27px
+            250px;
+
+        overflow:visible;
+    }
+
+
+    /* =========================================
+       ROLINHOS MOBILE
+    ========================================= */
+
+    .pergaminho-rolo{
+
+        height:54px;
+
+        left:-10px;
+
+        width:calc(100% + 20px);
+    }
+
+
+    .rolo-top{
+        top:3px;
+    }
+
+
+    .rolo-bottom{
+        bottom:-40px;
+    }
+
+
+    .rolo-left,
+    .rolo-right{
+        width:40px;
+    }
+
+
+    .rolo-center{
+        height:41px;
+    }
+
+
+    /* =========================================
+       CONTEÚDO MOBILE
+    ========================================= */
+
+    .pergaminho-conteudo{
+
+        z-index:30;
+
+        padding-bottom:45px;
+    }
+
+
+    .titulo-voto{
+
+        font-size:39px;
+
+        margin-bottom:30px;
+    }
+
+
+    .texto-voto{
+
+        font-size:19px;
+
+        line-height:1.7;
+    }
+
+
+    .texto-voto p{
+
+        font-size:19px;
+
+        line-height:1.7;
+
+        margin-bottom:20px;
+    }
+
+
+    .frase-alianca{
+
+        font-size:21px !important;
+
+        padding:
+            17px
+            7px;
+    }
+
+
+    .assinatura{
+
+        margin-top:35px;
+    }
+
+
+    .assinatura span{
+        font-size:23px;
+    }
+
+
+    .assinatura strong{
+        font-size:35px;
+    }
+
+
+    .brincadeira{
+        font-size:17px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES MUITO PEQUENOS
+========================================================= */
+
+@media(max-width:380px){
+
+    .moon{
+
+        width:230px;
+
+        right:-40px;
+    }
+
+
+    h1{
+        font-size:40px;
+    }
+
+
+    #final h1{
+        font-size:52px;
+    }
+
+
+    .music-player{
+        width:200px;
+    }
+
+
+    .pergaminho{
+
+        min-height:820px;
+        height:auto;
+
+        padding:
+            90px
+            22px
+            235px;
+
+        overflow:visible;
+    }
+
+
+    .pergaminho-wrapper{
+
+        max-height:none;
+
+        overflow:visible;
+
+        padding-bottom:55px;
+    }
+
+
+    .rolo-bottom{
+        bottom:-40px;
+    }
+
+
+    .texto-voto p{
+
+        font-size:17px;
+
+        line-height:1.7;
+    }
+
+
+    .titulo-voto{
+        font-size:36px;
+    }
+
+}

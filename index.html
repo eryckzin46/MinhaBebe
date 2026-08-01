@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Feliz Aniversário ❤️</title>
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MÚSICA
+    ====================================================== -->
+
+    <audio id="musica" loop>
+
+        <source
+            src="musica/musica.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- =====================================================
+         PLAYER DE MÚSICA
+    ====================================================== -->
+
+    <div class="music-player"
+         id="musicPlayer">
+
+        <button
+            class="music-play"
+            id="musicPlay"
+            aria-label="Tocar música">
+
+            ▶
+
+        </button>
+
+
+        <div class="music-info">
+
+            <span class="music-title">
+                Nossa música 💜
+            </span>
+
+            <span class="music-status"
+                  id="musicStatus">
+
+                Pausada
+
+            </span>
+
+        </div>
+
+
+        <div class="music-progress-container">
+
+            <div
+                class="music-progress"
+                id="musicProgress">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FUNDO
+    ====================================================== -->
+
+    <div class="background">
+
+        <!-- Lua -->
+
+        <img
+            src="imagens/lua.png"
+            class="moon"
+            alt="">
+
+        <!-- Glow -->
+
+        <div class="moonGlow"></div>
+
+        <!-- Estrelas -->
+
+        <div id="stars"></div>
+
+        <!-- Corações -->
+
+        <div id="hearts"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         INÍCIO
+    ====================================================== -->
+
+    <section id="inicio">
+
+        <div class="container">
+
+            <h2>
+                Feliz aniversário...
+            </h2>
+
+            <h1>
+                Minha Garota 💙
+            </h1>
+
+            <p>
+                Hj eu queria te dar um presente.
+                Mas não um presente que cabe em uma caixa. 
+                Mas um pedacinho de tudo aquilo
+                que eu sinto por vc
+            </p>
+
+            <button id="comecar">
+
+                Começar
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PÁGINA 2
+    ====================================================== -->
+
+    <section id="pagina2">
+
+        <div class="pagina">
+
+            <img
+                src="imagens/foto1.jpg"
+                class="fotoPrincipal"
+                alt="">
+
+            <h1 class="typing">
+
+                Antes de qualquer coisa...
+
+            </h1>
+
+            <p class="typing">
+
+                Feliz aniversário, minha princesa.
+
+            </p>
+
+            <p class="typing">
+
+                Hj é um dia muito especial.
+
+            </p>
+
+            <p class="typing">
+
+                Pq foi nesse dia que nasceu
+            a garota que conseguiu mudar
+             completamente os meus dias.
+
+            </p>
+
+            <p class="typing">
+
+             A garota que me faz sorrir
+             mesmo quando ela nem percebe.
+
+            </p>
+
+            <p class="typing">
+
+                A garota que me mostrou que amar
+                também é compreender, respeitar e permanecer.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PÁGINA 3
+    ====================================================== -->
+
+    <section id="pagina3">
+
+        <div class="pagina">
+
+            <h1 class="typing">
+
+                Eu queria te agradecer
+
+            </h1>
+
+            <p class="typing">
+
+                Obrigado por existir.
+
+            </p>
+
+            <p class="typing">
+
+                Obrigado pelas nossas conversas.
+
+            </p>
+
+            <p class="typing">
+
+                Obrigado pelas risadas.
+
+            </p>
+
+            <p class="typing">
+
+                Obrigado por confiar em mim.
+
+            </p>
+
+            <p class="typing">
+
+                Obrigado por escolher continuar aqui.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PÁGINA 4
+    ====================================================== -->
+
+    <section id="pagina4">
+
+        <div class="pagina">
+
+            <h1 class="typing">
+
+                Tem uma coisa...
+
+            </h1>
+
+            <p class="typing">
+
+                Talvez você nunca tenha percebido isso.
+
+            </p>
+
+            <p class="typing">
+
+                Meu lugar favorito nunca foi um lugar.
+
+            </p>
+
+            <p class="typing">
+
+                Sempre foi qualquer momento
+                em que eu podia conversar com você.
+
+            </p>
+
+            <p class="typing">
+
+                Porque, de alguma forma,
+                você sempre conseguiu melhorar os meus dias.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PÁGINA 5
+    ====================================================== -->
+
+    <section id="pagina5">
+
+        <div class="pagina">
+
+            <h1>
+
+                O que eu admiro em você
+
+            </h1>
+
+            <ul>
+
+                <li>
+                    💙 Seu jeitinho.
+                </li>
+
+                <li>
+                    💙 Sua força.
+                </li>
+
+                <li>
+                    💙 Seu coração.
+                </li>
+
+                <li>
+                    💙 Seu olhar.
+                </li>
+
+                <li>
+                    💙 Sua sinceridade.
+                </li>
+
+                <li>
+                    💙 Até suas imperfeições.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL
+    ====================================================== -->
+
+    <section id="final">
+
+        <div class="container">
+
+            <h2>
+
+                Feliz aniversário...
+
+            </h2>
+
+            <h1>
+
+                Eu te amo 💙
+
+            </h1>
+
+            <p>
+
+                Enquanto nós continuarmos escolhendo um ao outro, 
+                sempre vai existir um caminho de volta.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NOSSO VOTO
+    ====================================================== -->
+
+    <section
+        class="voto-section"
+        id="voto">
+
+        <div class="voto-container">
+
+            <p class="voto-intro">
+
+                E agora...
+
+            </p>
+
+            <h1>
+
+                Nosso voto
+
+            </h1>
+
+            <p class="voto-subtitulo">
+
+                Uma promessa escrita para nós dois.
+
+            </p>
+
+            <button
+                class="voto-button"
+                id="abrirVoto">
+
+                💍 Abrir nosso voto
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         OVERLAY DO PERGAMINHO
+    ====================================================== -->
+
+    <div
+        class="voto-overlay"
+        id="votoOverlay">
+
+
+        <div
+            class="pergaminho-wrapper"
+            id="pergaminhoWrapper">
+
+
+            <!-- ROLINHO SUPERIOR -->
+
+            <div class="pergaminho-rolo rolo-top">
+
+                <div class="rolo-left"></div>
+
+                <div class="rolo-center"></div>
+
+                <div class="rolo-right"></div>
+
+            </div>
+
+
+            <!-- PAPEL -->
+
+            <div class="pergaminho">
+
+                <div class="papel-textura"></div>
+
+
+                <div
+                    class="pergaminho-conteudo"
+                    id="conteudoVoto">
+
+
+                    <div class="titulo-voto">
+
+                        💍 Nosso voto
+
+                    </div>
+
+
+                    <div
+                        class="texto-voto"
+                        id="textoVoto">
+
+
+                        <p>
+
+                            Se eu pudesse fazer um pedido hoje,
+                            não seria por algo impossível.
+
+                        </p>
+
+
+                        <p>
+
+                            Eu só pediria que a gente continuasse
+                            escolhendo um ao outro, um dia de cada vez.
+
+                        </p>
+
+
+                        <p>
+
+                            Sem pressa.
+
+                        </p>
+
+
+                        <p>
+
+                            Sem perfeição.
+
+                        </p>
+
+
+                        <p>
+
+                            Apenas nós dois, construindo nossa história
+                            do nosso jeito.
+
+                        </p>
+
+
+                        <p>
+
+                            Feliz aniversário, minha princesa.
+
+                        </p>
+
+
+                        <p>
+
+                            Eu te amo mais do que qualquer página
+                            desse site conseguiria explicar. 💙
+
+                        </p>
+
+
+                        <p class="frase-alianca">
+
+                            “Com esta aliança, eu peço a você
+                            que seja minha.”
+
+                        </p>
+
+
+                        <p>
+
+                            Ainda não temos alianças de verdade, 
+                            masss, enquanto esse dia não chega,
+                            eu continuo escolhendo você todos os dias.
+
+                        </p>
+
+
+                    </div>
+
+
+                    <!-- ASSINATURA -->
+
+                    <div
+                        class="assinatura"
+                        id="assinatura">
+
+                        <span>
+
+                            Para sempre,
+
+                        </span>
+
+                        <strong>
+
+                            eryckzin pilotao 46 😜
+
+                        </strong>
+
+                    </div>
+
+
+                    <!-- BRINCADEIRA -->
+
+                    <div
+                        class="brincadeira"
+                        id="brincadeira">
+
+                        Se Deus quiser seu futuro marido 💜
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- ROLINHO INFERIOR -->
+
+            <div class="pergaminho-rolo rolo-bottom">
+
+                <div class="rolo-left"></div>
+
+                <div class="rolo-center"></div>
+
+                <div class="rolo-right"></div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- FECHAR -->
+
+        <button
+            class="fechar-voto"
+            id="fecharVoto"
+            aria-label="Fechar">
+
+            ✕
+
+        </button>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         SCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
